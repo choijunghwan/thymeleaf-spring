@@ -31,8 +31,14 @@ public class FormItemController {
         return "form/item";
     }
 
+    // Model model , model.addAttribute("item", new Item());
+    // 위 부분을
+    // @ModelAttribute("item") Item item 으로 변경가능하다.
+    // 다만 ModelAttribute는 view에 있는 Name 속성을 통해 item객체에 자바빈프로퍼티(setter)를 이용해
+    // 바인딩을 한뒤 Model에 객체를 넣어주므로, 혹시나 item 객체에 setter가 없다면 에러가 날 수 있다.
     @GetMapping("/add")
-    public String addForm() {
+    public String addForm(Model model) {
+        model.addAttribute("item", new Item());
         return "form/addForm";
     }
 
