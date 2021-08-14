@@ -12,6 +12,7 @@ public class Item {
     private Integer price;
     private Integer quantity;
 
+    // Boolean 타입을 사용해 null값을 가질 수 있다.
     private Boolean open; //판매 여부
     private List<String> regions; //등록 지역
     private ItemType itemType; //상품 종류
